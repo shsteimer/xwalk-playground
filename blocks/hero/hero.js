@@ -66,14 +66,15 @@ export default async function decorate(block) {
   titleWrapper.nextElementSibling.classList.add('hero-description');
 
   if (cta1) {
-    cta1.classList.add('hero-ctas');
+    const ctas = document.createElement('div');
+    ctas.classList.add('hero-ctas');
+    ctas.appendChild(cta1);
 
     const cta1Container = cta1.querySelector('.button-container');
     cta1.replaceChildren(cta1Container);
 
     if (cta2) {
-      cta1.appendChild(cta2.querySelector('.button-container'));
-      cta2.remove();
+      ctas.appendChild(cta2);
     }
 
     processCtas(cta1.querySelectorAll('a'));
