@@ -24,7 +24,9 @@ const FIELDS = {
   imageAlt: {
     defaultValue: '',
   },
-  video: {},
+  video: {
+    get: (child) => child.querySelector('a')?.href,
+  },
   icon: {
     get: (child) => child.querySelector('picture'),
   },
@@ -49,7 +51,9 @@ const FIELDS = {
     defaultValue: 'link',
   },
   cta1Link: {},
-  cta1Asset: {},
+  cta1Asset: {
+    get: (child) => child.querySelector('img')?.src || child.querySelector('a')?.href,
+  },
   cta1AriaLabel: {
     defaultValue: '',
   },
@@ -68,7 +72,9 @@ const FIELDS = {
     defaultValue: 'link',
   },
   cta2Link: {},
-  cta2Asset: {},
+  cta2Asset: {
+    get: (child) => child.querySelector('img')?.src || child.querySelector('a')?.href,
+  },
   cta2AriaLabel: {
     defaultValue: '',
   },
