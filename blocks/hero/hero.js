@@ -68,6 +68,7 @@ export default async function decorate(block) {
   if (cta1) {
     const ctas = document.createElement('div');
     ctas.classList.add('hero-ctas');
+    cta1.before(ctas);
     ctas.appendChild(cta1);
 
     const cta1Container = cta1.querySelector('.button-container');
