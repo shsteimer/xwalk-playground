@@ -22,7 +22,7 @@
       "fields": [
         {
           "component": "select",
-          "name": "backgroundType",
+          "name": "classes_type",
           "label": "Background Type",
           "required": true,
           "options": [
@@ -38,7 +38,7 @@
         },
         {
           "component": "text",
-          "name": "text",
+          "name": "title",
           "label": "Title",
           "valueType": "string",
           "validation": {
@@ -49,7 +49,21 @@
         },
         {
           "component": "select",
-          "name": "titleFont",
+          "name": "titleType",
+          "label": "Title Type",
+          "options": [
+            {
+              "name": "h1",
+              "value": "h1"
+            }
+          ],
+          "hidden": true,
+          "valueType": "string",
+          "value": "h1"
+        },
+        {
+          "component": "select",
+          "name": "classes_font",
           "label": "Title Font",
           "valueType": "string",
           "value": "Roboto",
@@ -72,7 +86,7 @@
         },
         {
           "component": "select",
-          "name": "size",
+          "name": "classes_size",
           "label": "Hero Size",
           "value": "large",
           "options": [
@@ -88,7 +102,7 @@
           "condition": {
             "===": [
               {
-                "var": "backgroundType"
+                "var": "classes_type"
               },
               "image"
             ]
@@ -97,7 +111,7 @@
         {
           "component": "boolean",
           "label": "Offset Content?",
-          "name": "offsetContent",
+          "name": "classes_offset",
           "valueType": "boolean",
           "description": "Offset content on the left in the hero section"
         },
@@ -111,7 +125,7 @@
           "condition": {
             "===": [
               {
-                "var": "backgroundType"
+                "var": "classes_type"
               },
               "image"
             ]
@@ -125,7 +139,7 @@
           "condition": {
             "===": [
               {
-                "var": "backgroundType"
+                "var": "classes_type"
               },
               "image"
             ]
@@ -141,7 +155,7 @@
           "condition": {
             "===": [
               {
-                "var": "backgroundType"
+                "var": "classes_type"
               },
               "video"
             ]
@@ -156,7 +170,7 @@
           "condition": {
             "===": [
               {
-                "var": "backgroundType"
+                "var": "classes_type"
               },
               "image"
             ]
@@ -170,7 +184,7 @@
           "condition": {
             "===": [
               {
-                "var": "backgroundType"
+                "var": "classes_type"
               },
               "image"
             ]
@@ -197,7 +211,7 @@
               {
                 "===": [
                   {
-                    "var": "backgroundType"
+                    "var": "classes_type"
                   },
                   "image"
                 ]
@@ -205,7 +219,7 @@
               {
                 "===": [
                   {
-                    "var": "backgroundType"
+                    "var": "classes_type"
                   },
                   "video"
                 ]
@@ -221,7 +235,7 @@
           "condition": {
             "===": [
               {
-                "var": "backgroundType"
+                "var": "classes_type"
               },
               "image"
             ]
@@ -246,7 +260,7 @@
           "condition": {
             "===": [
               {
-                "var": "backgroundType"
+                "var": "classes_type"
               },
               "image"
             ]
@@ -270,7 +284,7 @@
               "condition": {
                 "===": [
                   {
-                    "var": "backgroundType"
+                    "var": "classes_type"
                   },
                   "image"
                 ]
@@ -284,7 +298,7 @@
               "condition": {
                 "===": [
                   {
-                    "var": "backgroundType"
+                    "var": "classes_type"
                   },
                   "image"
                 ]
@@ -309,7 +323,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -335,7 +349,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -367,7 +381,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -398,7 +412,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -426,7 +440,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -476,7 +490,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -510,7 +524,7 @@
               {
                 "===": [
                   {
-                    "var": "backgroundType"
+                    "var": "classes_type"
                   },
                   "image"
                 ]
@@ -546,7 +560,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -568,7 +582,7 @@
               "condition": {
                 "===": [
                   {
-                    "var": "backgroundType"
+                    "var": "classes_type"
                   },
                   "image"
                 ]
@@ -594,7 +608,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -621,7 +635,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -654,7 +668,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -685,7 +699,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -713,7 +727,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
@@ -763,7 +777,7 @@
                   {
                     "===": [
                       {
-                        "var": "backgroundType"
+                        "var": "classes_type"
                       },
                       "image"
                     ]
