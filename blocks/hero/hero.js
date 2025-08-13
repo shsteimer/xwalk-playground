@@ -35,11 +35,7 @@ const FIELDS = {
   ctaNumber: {
     get: (child) => {
       const text = child.textContent.trim();
-      const number = Number(text);
-      if (Number.isNaN(number)) {
-        return 1;
-      }
-      return number;
+      return text === 'two' ? 2 : 1;
     },
     defaultValue: 1,
   },
