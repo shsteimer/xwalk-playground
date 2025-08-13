@@ -152,7 +152,9 @@
                 "template": {
                   "name": "Hero",
                   "model": "hero",
-                  "content_titleType": "h1"
+                  "content_title": "",
+                  "content_titleType": "h1",
+                  "classes_type": "image"
                 }
               }
             }
