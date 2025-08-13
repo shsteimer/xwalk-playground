@@ -5,6 +5,7 @@
     "/content/xwalk-playground/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/xwalk-playground/"
+    "/content/xwalk-playground/",
+    "/content/dam/xwalk-playground/"
   ]
 }
