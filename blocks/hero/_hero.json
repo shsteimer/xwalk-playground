@@ -9,7 +9,8 @@
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
               "name": "Hero",
-              "model": "hero"
+              "model": "hero",
+              "content_titleType": "h1"
             }
           }
         }
@@ -38,7 +39,7 @@
         },
         {
           "component": "text",
-          "name": "title",
+          "name": "content_title",
           "label": "Title",
           "valueType": "string",
           "validation": {
@@ -49,7 +50,7 @@
         },
         {
           "component": "select",
-          "name": "titleType",
+          "name": "content_titleType",
           "label": "Title Type",
           "options": [
             {
@@ -80,7 +81,7 @@
         },
         {
           "component": "richtext",
-          "name": "description",
+          "name": "content_description",
           "label": "Description",
           "valueType": "string"
         },
@@ -118,7 +119,7 @@
         {
           "component": "reference",
           "valueType": "string",
-          "name": "backgroundImage",
+          "name": "background_image",
           "label": "Background Image",
           "multi": false,
           "required": true,
@@ -134,7 +135,7 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "altText",
+          "name": "background_imageAlt",
           "label": "Image Alt Text",
           "condition": {
             "===": [
@@ -149,7 +150,7 @@
           "component": "reference",
           "valueType": "string",
           "multi": false,
-          "name": "video",
+          "name": "background_video",
           "label": "Video",
           "required": true,
           "condition": {
@@ -165,7 +166,7 @@
           "component": "reference",
           "valueType": "string",
           "multi": false,
-          "name": "icon",
+          "name": "content_icon",
           "label": "Icon",
           "condition": {
             "===": [
@@ -178,7 +179,7 @@
         },
         {
           "component": "text",
-          "name": "imageIconAlt",
+          "name": "content_iconAlt",
           "label": "Icon Alt text",
           "valueType": "string",
           "condition": {
@@ -192,7 +193,7 @@
         },
         {
           "component": "select",
-          "name": "text-color",
+          "name": "classes_textColor",
           "label": "Text Color",
           "value": "white",
           "required": true,
@@ -228,30 +229,6 @@
           }
         },
         {
-          "component": "select",
-          "name": "ctaNumber",
-          "label": "Number of CTA(s)",
-          "value": "one",
-          "condition": {
-            "===": [
-              {
-                "var": "classes_type"
-              },
-              "image"
-            ]
-          },
-          "options": [
-            {
-              "name": "One",
-              "value": "one"
-            },
-            {
-              "name": "Two",
-              "value": "two"
-            }
-          ]
-        },
-        {
           "component": "container",
           "collapsible": true,
           "name": "oneButton",
@@ -268,7 +245,7 @@
           "fields": [
             {
               "component": "select",
-              "name": "ctaStyle",
+              "name": "ctas_ctaType",
               "label": "CTA Style",
               "value": "primary",
               "options": [
@@ -292,7 +269,7 @@
             },
             {
               "component": "text",
-              "name": "ctaLabel",
+              "name": "ctas_ctaText",
               "label": "First CTA Label",
               "valueType": "string",
               "condition": {
@@ -306,7 +283,7 @@
             },
             {
               "component": "select",
-              "name": "ctaType",
+              "name": "ctas_ctaAction",
               "label": "CTA Selection",
               "options": [
                 {
@@ -330,7 +307,7 @@
                   },
                   {
                     "!!": {
-                      "var": "oneButton|ctaLabel"
+                      "var": "ctas_ctaText"
                     }
                   }
                 ]
@@ -338,7 +315,7 @@
             },
             {
               "component": "aem-content",
-              "name": "ctaLink",
+              "name": "ctas_cta",
               "label": "CTA Link",
               "valueType": "string",
               "validation": {
@@ -356,13 +333,13 @@
                   },
                   {
                     "!!": {
-                      "var": "oneButton|ctaLabel"
+                      "var": "ctas_ctaText"
                     }
                   },
                   {
                     "===": [
                       {
-                        "var": "oneButton|ctaType"
+                        "var": "ctas_ctaAction"
                       },
                       "link"
                     ]
@@ -374,7 +351,7 @@
               "component": "reference",
               "valueType": "string",
               "multi": false,
-              "name": "ctaAsset",
+              "name": "ctas_ctaAsset",
               "label": "Asset (PDF/Image)",
               "condition": {
                 "and": [
@@ -388,13 +365,13 @@
                   },
                   {
                     "!!": {
-                      "var": "oneButton|ctaLabel"
+                      "var": "ctas_ctaText"
                     }
                   },
                   {
                     "===": [
                       {
-                        "var": "oneButton|ctaType"
+                        "var": "ctas_ctaAction"
                       },
                       "asset"
                     ]
@@ -404,7 +381,7 @@
             },
             {
               "component": "text",
-              "name": "ctaAriaLabel",
+              "name": "ctas_ctaTitle",
               "label": "ARIA Label",
               "valueType": "string",
               "condition": {
@@ -415,97 +392,6 @@
                         "var": "classes_type"
                       },
                       "image"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "component": "select",
-              "name": "targetPath",
-              "label": "Target Path",
-              "value": "sameTab",
-              "options": [
-                {
-                  "name": "Same Tab",
-                  "value": "sameTab"
-                },
-                {
-                  "name": "New Tab",
-                  "value": "newTab"
-                }
-              ],
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "oneButton|ctaLabel"
-                    }
-                  },
-                  {
-                    "===": [
-                      {
-                        "var": "oneButton|ctaType"
-                      },
-                      "link"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "component": "select",
-              "label": "Exit Interstitial",
-              "name": "exitInterstitial",
-              "value": "select",
-              "valueType": "string",
-              "options": [
-                {
-                  "name": "select",
-                  "value": "select"
-                },
-                {
-                  "name": "Third Parties",
-                  "value": "third-parties"
-                },
-                {
-                  "name": "Alternative Brand",
-                  "value": "alt-brand"
-                },
-                {
-                  "name": "User Account",
-                  "value": "account"
-                }
-              ],
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "oneButton|ctaLabel"
-                    }
-                  },
-                  {
-                    "===": [
-                      {
-                        "var": "oneButton|ctaType"
-                      },
-                      "link"
                     ]
                   }
                 ]
@@ -528,21 +414,13 @@
                   },
                   "image"
                 ]
-              },
-              {
-                "===": [
-                  {
-                    "var": "ctaNumber"
-                  },
-                  "two"
-                ]
               }
             ]
           },
           "fields": [
             {
               "component": "select",
-              "name": "secCtaStyle",
+              "name": "ctas_secCtaType",
               "label": "CTA Style",
               "value": "primary",
               "options": [
@@ -567,7 +445,7 @@
                   },
                   {
                     "!!": {
-                      "var": "twoButton|secCtaLabel"
+                      "var": "ctas_secCtaText"
                     }
                   }
                 ]
@@ -575,7 +453,7 @@
             },
             {
               "component": "text",
-              "name": "secCtaLabel",
+              "name": "ctas_secCtaText",
               "label": "Second CTA Label",
               "valueType": "string",
               "description": "Enter label to display on the CTA for each card",
@@ -590,7 +468,7 @@
             },
             {
               "component": "select",
-              "name": "secCtaType",
+              "name": "ctas_secCtaAction",
               "label": "CTA Selection",
               "description": "Select the CTA Selection",
               "options": [
@@ -615,7 +493,7 @@
                   },
                   {
                     "!!": {
-                      "var": "twoButton|secCtaLabel"
+                      "var": "ctas_secCtaText"
                     }
                   }
                 ]
@@ -623,7 +501,7 @@
             },
             {
               "component": "aem-content",
-              "name": "secCtaLink",
+              "name": "ctas_secCta",
               "label": "CTA Link",
               "valueType": "string",
               "description": "Enter the URL to navigate when CTA is clicked for each card",
@@ -642,13 +520,13 @@
                   },
                   {
                     "!!": {
-                      "var": "twoButton|secCtaLabel"
+                      "var": "ctas_secCtaText"
                     }
                   },
                   {
                     "===": [
                       {
-                        "var": "twoButton|secCtaType"
+                        "var": "ctas_secCtaAction"
                       },
                       "link"
                     ]
@@ -660,7 +538,7 @@
               "component": "reference",
               "valueType": "string",
               "multi": false,
-              "name": "secCtaAsset",
+              "name": "ctas_secCtaAsset",
               "label": "Asset (PDF/Image)",
               "description": "Upload the Asset (PDF/Image)",
               "condition": {
@@ -675,13 +553,13 @@
                   },
                   {
                     "!!": {
-                      "var": "twoButton|secCtaLabel"
+                      "var": "ctas_secCtaText"
                     }
                   },
                   {
                     "===": [
                       {
-                        "var": "twoButton|secCtaType"
+                        "var": "ctas_secCtaAction"
                       },
                       "asset"
                     ]
@@ -691,7 +569,7 @@
             },
             {
               "component": "text",
-              "name": "secCtaAriaLabel",
+              "name": "ctas_secCtaTitle",
               "label": "ARIA Label",
               "valueType": "string",
               "condition": {
@@ -702,97 +580,6 @@
                         "var": "classes_type"
                       },
                       "image"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "component": "select",
-              "name": "secTargetPath",
-              "label": "Target Path",
-              "value": "sameTab",
-              "options": [
-                {
-                  "name": "Same Tab",
-                  "value": "sameTab"
-                },
-                {
-                  "name": "New Tab",
-                  "value": "newTab"
-                }
-              ],
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "twoButton|secCtaLabel"
-                    }
-                  },
-                  {
-                    "===": [
-                      {
-                        "var": "twoButton|secCtaType"
-                      },
-                      "link"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "component": "select",
-              "label": "Exit Interstitial",
-              "name": "secExitInterstitial",
-              "valueType": "string",
-              "value": "select",
-              "options": [
-                {
-                  "name": "select",
-                  "value": "select"
-                },
-                {
-                  "name": "Third Parties",
-                  "value": "third-parties"
-                },
-                {
-                  "name": "Alternative Brand",
-                  "value": "alt-brand"
-                },
-                {
-                  "name": "Account",
-                  "value": "account"
-                }
-              ],
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "twoButton|secCtaLabel"
-                    }
-                  },
-                  {
-                    "===": [
-                      {
-                        "var": "twoButton|secCtaType"
-                      },
-                      "link"
                     ]
                   }
                 ]
