@@ -309,7 +309,7 @@
                   },
                   {
                     "!!": {
-                      "var": "ctas_ctaText"
+                      "var": "oneButton|ctas_ctaText"
                     }
                   }
                 ]
@@ -335,7 +335,7 @@
                   },
                   {
                     "!!": {
-                      "var": "ctas_ctaText"
+                      "var": "oneButton|ctas_ctaText"
                     }
                   },
                   {
@@ -367,7 +367,7 @@
                   },
                   {
                     "!!": {
-                      "var": "ctas_ctaText"
+                      "var": "oneButton|ctas_ctaText"
                     }
                   },
                   {
@@ -447,7 +447,7 @@
                   },
                   {
                     "!!": {
-                      "var": "ctas_secCtaText"
+                      "var": "twoButton|ctas_secCtaText"
                     }
                   }
                 ]
@@ -495,7 +495,7 @@
                   },
                   {
                     "!!": {
-                      "var": "ctas_secCtaText"
+                      "var": "twoButton|ctas_secCtaText"
                     }
                   }
                 ]
@@ -522,7 +522,7 @@
                   },
                   {
                     "!!": {
-                      "var": "ctas_secCtaText"
+                      "var": "twoButton|ctas_secCtaText"
                     }
                   },
                   {
@@ -555,7 +555,7 @@
                   },
                   {
                     "!!": {
-                      "var": "ctas_secCtaText"
+                      "var": "twoButton|ctas_secCtaText"
                     }
                   },
                   {
