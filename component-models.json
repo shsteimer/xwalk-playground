@@ -262,7 +262,7 @@
             {
               "var": "PrimarybackgroundType"
             },
-            "imageSlide"
+            "image"
           ]
         }
       },
@@ -650,7 +650,7 @@
                     {
                       "var": "PrimarybackgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
@@ -684,7 +684,7 @@
                 {
                   "var": "PrimarybackgroundType"
                 },
-                "imageSlide"
+                "image"
               ]
             },
             {
@@ -720,7 +720,7 @@
                     {
                       "var": "PrimarybackgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
@@ -742,7 +742,7 @@
                 {
                   "var": "PrimarybackgroundType"
                 },
-                "imageSlide"
+                "image"
               ]
             }
           },
@@ -768,7 +768,7 @@
                     {
                       "var": "PrimarybackgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
@@ -795,7 +795,7 @@
                     {
                       "var": "PrimarybackgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
@@ -828,7 +828,7 @@
                     {
                       "var": "PrimarybackgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
