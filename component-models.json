@@ -280,7 +280,7 @@
       },
       {
         "component": "custom-asset-namespace:custom-asset",
-        "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+        "configUrl": "https://main--xwalk-playground--shsteimer.aem.live/tools/asset-picker/image.config.json",
         "valueType": "string",
         "name": "BackgroundImage",
         "label": "Background Image",
@@ -325,7 +325,7 @@
       },
       {
         "component": "custom-asset-namespace:custom-asset",
-        "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+        "configUrl": "https://main--xwalk-playground--shsteimer.aem.live/tools/asset-picker/image.config.json",
         "valueType": "string",
         "name": "videoPath",
         "label": "Video Path",
@@ -355,7 +355,7 @@
       },
       {
         "component": "custom-asset-namespace:custom-asset",
-        "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+        "configUrl": "https://main--xwalk-playground--shsteimer.aem.live/tools/asset-picker/image.config.json",
         "valueType": "string",
         "name": "icon",
         "label": "Icon",
@@ -585,7 +585,7 @@
           },
           {
             "component": "custom-asset-namespace:custom-asset",
-            "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+            "configUrl": "https://main--xwalk-playground--shsteimer.aem.live/tools/asset-picker/image.config.json",
             "name": "ctaAsset",
             "label": "Asset (PDF/Image)",
             "description": "Upload the Asset (PDF/Image)",
@@ -917,7 +917,7 @@
           },
           {
             "component": "custom-asset-namespace:custom-asset",
-            "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+            "configUrl": "https://main--xwalk-playground--shsteimer.aem.live/tools/asset-picker/image.config.json",
             "name": "secCtaAsset",
             "label": "Asset (PDF/Image)",
             "description": "Upload the Asset (PDF/Image)",
