@@ -1,10 +1,12 @@
+import { loadFragment } from '../fragment/fragment.js';
+
 const FIELDS = {
   backgroundType: {
-    defaultValue: 'imageSlide',
+    defaultValue: 'image',
   },
   title: {},
   titleFont: {
-    defaultValue: 'Ringside',
+    defaultValue: 'Roboto',
   },
   description: {
     get: (child) => child.children[0],
@@ -121,8 +123,14 @@ function buildCta(config, index) {
     const link = config[`cta${index + 1}Link`];
     cta.href = link;
     if (exitInterstitial) {
-      cta.addEventListener('click', () => {
-        // todo show modal before sending to destination
+      cta.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dlg = document.createElement('dialog');
+
+        const fragment = loadFragment(`/fragments/modals/${exitInterstitial}`);
+        dlg.appendChild(fragment);
+        document.body.appendChild(dlg);
+        dlg.showModal();
       });
     }
   }
@@ -136,7 +144,7 @@ function renderBlock(config) {
   const background = document.createElement('div');
   background.classList.add('hero-background');
 
-  if (config.backgroundType === 'imageSlide') {
+  if (config.backgroundType === 'image') {
     const { backgroundImage, imageAlt } = config;
     if (backgroundImage) {
       background.appendChild(backgroundImage);

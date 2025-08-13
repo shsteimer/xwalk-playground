@@ -459,28 +459,16 @@
                   "value": "select"
                 },
                 {
-                  "name": "General Third Parties",
-                  "value": "general-third-parties"
+                  "name": "Third Parties",
+                  "value": "third-parties"
                 },
                 {
-                  "name": "Telehealth",
-                  "value": "telehealth"
+                  "name": "Alternative Brand",
+                  "value": "alt-brand"
                 },
                 {
-                  "name": "Account",
+                  "name": "User Account",
                   "value": "account"
-                },
-                {
-                  "name": "Account Wellbeing",
-                  "value": "account-wellbeing"
-                },
-                {
-                  "name": "Embedded Tools Healthgrades",
-                  "value": "embedded-tools-healthgrades"
-                },
-                {
-                  "name": "Embedded Tools Nourish",
-                  "value": "embedded-tools-nourish"
                 }
               ],
               "condition": {
@@ -758,28 +746,16 @@
                   "value": "select"
                 },
                 {
-                  "name": "General Third Parties",
-                  "value": "general-third-parties"
+                  "name": "Third Parties",
+                  "value": "third-parties"
                 },
                 {
-                  "name": "Telehealth",
-                  "value": "telehealth"
+                  "name": "Alternative Brand",
+                  "value": "alt-brand"
                 },
                 {
                   "name": "Account",
                   "value": "account"
-                },
-                {
-                  "name": "Account Wellbeing",
-                  "value": "account-wellbeing"
-                },
-                {
-                  "name": "Embedded Tools Healthgrades",
-                  "value": "embedded-tools-healthgrades"
-                },
-                {
-                  "name": "Embedded Tools Nourish",
-                  "value": "embedded-tools-nourish"
                 }
               ],
               "condition": {
