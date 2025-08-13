@@ -522,7 +522,7 @@
             "component": "reference",
             "valueType": "string",
             "multi": false,
-            "name": "ctas_cta",
+            "name": "ctas_ctaAsset",
             "label": "Asset (PDF/Image)",
             "condition": {
               "and": [
@@ -709,7 +709,7 @@
             "component": "reference",
             "valueType": "string",
             "multi": false,
-            "name": "ctas_secCta",
+            "name": "ctas_secCtaAsset",
             "label": "Asset (PDF/Image)",
             "description": "Upload the Asset (PDF/Image)",
             "condition": {
