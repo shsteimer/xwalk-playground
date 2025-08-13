@@ -194,18 +194,17 @@
     "fields": [
       {
         "component": "select",
-        "name": "PrimarybackgroundType",
-        "label": "Primary Background Type",
-        "description": "Select Background Type Primary Hero",
+        "name": "backgroundType",
+        "label": "Background Type",
         "required": true,
         "options": [
           {
             "name": "Image",
-            "value": "imageSlide"
+            "value": "image"
           },
           {
             "name": "Video",
-            "value": "videoSlide"
+            "value": "video"
           }
         ]
       },
@@ -214,11 +213,10 @@
         "name": "text",
         "label": "Title",
         "valueType": "string",
-        "description": "Enter main heading for the Primary Hero",
         "validation": {
           "minLength": 0,
           "maxLength": 70,
-          "customErrorMsg": "Maximum Characters length limit should not be more than 70"
+          "customErrorMsg": "Hero Title should not be more than 70 characters"
         }
       },
       {
@@ -226,16 +224,15 @@
         "name": "titleFont",
         "label": "Title Font",
         "valueType": "string",
-        "value": "Ringside",
-        "description": "Select a font for the title",
+        "value": "Roboto",
         "options": [
           {
-            "name": "Garamond",
-            "value": "Garamond"
+            "name": "Roboto",
+            "value": "Roboto"
           },
           {
-            "name": "Ringside",
-            "value": "Ringside"
+            "name": "Lato",
+            "value": "Lato"
           }
         ]
       },
@@ -243,23 +240,21 @@
         "component": "richtext",
         "name": "description",
         "label": "Description",
-        "valueType": "string",
-        "description": "Enter description for additional context"
+        "valueType": "string"
       },
       {
         "component": "select",
         "name": "size",
-        "label": "Size",
+        "label": "Hero Size",
         "value": "large",
-        "description": "Enter the size of the hero",
         "options": [
-          {
-            "name": "Medium",
-            "value": "medium"
-          },
           {
             "name": "Large",
             "value": "large"
+          },
+          {
+            "name": "Medium",
+            "value": "medium"
           }
         ],
         "condition": {
@@ -274,39 +269,37 @@
       {
         "component": "boolean",
         "label": "Offset Content?",
-        "name": "OffsetContent",
+        "name": "offsetContent",
         "valueType": "boolean",
         "description": "Offset content on the left in the hero section"
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "BackgroundImage",
+        "name": "backgroundImage",
         "label": "Background Image",
         "multi": false,
-        "description": "Upload Image for the Primary Hero",
         "required": true,
         "condition": {
           "===": [
             {
-              "var": "PrimarybackgroundType"
+              "var": "backgroundType"
             },
-            "imageSlide"
+            "image"
           ]
         }
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "Image Alt",
+        "name": "altText",
         "label": "Image Alt Text",
-        "description": "Add Alt Text for Image Primary Hero",
         "condition": {
           "===": [
             {
-              "var": "PrimarybackgroundType"
+              "var": "backgroundType"
             },
-            "imageSlide"
+            "image"
           ]
         }
       },
@@ -314,16 +307,15 @@
         "component": "reference",
         "valueType": "string",
         "multi": false,
-        "name": "videoPath",
-        "label": "Video Path",
-        "description": "Upload the full-length video",
+        "name": "video",
+        "label": "Video",
         "required": true,
         "condition": {
           "===": [
             {
-              "var": "PrimarybackgroundType"
+              "var": "backgroundType"
             },
-            "videoSlide"
+            "video"
           ]
         }
       },
@@ -333,36 +325,33 @@
         "multi": false,
         "name": "icon",
         "label": "Icon",
-        "description": "Upload the icon image",
         "condition": {
           "===": [
             {
-              "var": "PrimarybackgroundType"
+              "var": "backgroundType"
             },
-            "imageSlide"
+            "image"
           ]
         }
       },
       {
         "component": "text",
-        "name": "imageAlt",
+        "name": "imageIconAlt",
         "label": "Icon Alt text",
         "valueType": "string",
-        "description": "Pick alt text from AEM DAM with ability to override it",
         "condition": {
           "===": [
             {
-              "var": "PrimarybackgroundType"
+              "var": "backgroundType"
             },
-            "imageSlide"
+            "image"
           ]
         }
       },
       {
         "component": "select",
-        "name": "textcolor",
+        "name": "text-color",
         "label": "Text Color",
-        "description": "Select the Text Color",
         "value": "white",
         "required": true,
         "options": [
@@ -380,17 +369,17 @@
             {
               "===": [
                 {
-                  "var": "PrimarybackgroundType"
+                  "var": "backgroundType"
                 },
-                "imageSlide"
+                "image"
               ]
             },
             {
               "===": [
                 {
-                  "var": "PrimarybackgroundType"
+                  "var": "backgroundType"
                 },
-                "videoSlide"
+                "video"
               ]
             }
           ]
@@ -400,14 +389,13 @@
         "component": "select",
         "name": "ctaNumber",
         "label": "Number of CTA(s)",
-        "description": "Select the number of CTA(s) required",
         "value": "one",
         "condition": {
           "===": [
             {
-              "var": "PrimarybackgroundType"
+              "var": "backgroundType"
             },
-            "imageSlide"
+            "image"
           ]
         },
         "options": [
@@ -430,9 +418,9 @@
         "condition": {
           "===": [
             {
-              "var": "PrimarybackgroundType"
+              "var": "backgroundType"
             },
-            "imageSlide"
+            "image"
           ]
         },
         "fields": [
@@ -440,7 +428,6 @@
             "component": "select",
             "name": "ctaStyle",
             "label": "CTA Style",
-            "description": "Select the style of the Button CTA",
             "value": "primary",
             "options": [
               {
@@ -455,9 +442,9 @@
             "condition": {
               "===": [
                 {
-                  "var": "PrimarybackgroundType"
+                  "var": "backgroundType"
                 },
-                "imageSlide"
+                "image"
               ]
             }
           },
@@ -466,13 +453,12 @@
             "name": "ctaLabel",
             "label": "First CTA Label",
             "valueType": "string",
-            "description": "Enter label to display on the CTA for each card",
             "condition": {
               "===": [
                 {
-                  "var": "PrimarybackgroundType"
+                  "var": "backgroundType"
                 },
-                "imageSlide"
+                "image"
               ]
             }
           },
@@ -480,7 +466,6 @@
             "component": "select",
             "name": "ctaType",
             "label": "CTA Selection",
-            "description": "Select the CTA Selection",
             "options": [
               {
                 "name": "Link",
@@ -496,9 +481,9 @@
                 {
                   "===": [
                     {
-                      "var": "PrimarybackgroundType"
+                      "var": "backgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
@@ -514,7 +499,6 @@
             "name": "ctaLink",
             "label": "CTA Link",
             "valueType": "string",
-            "description": "Enter the URL to navigate when CTA is clicked for each card",
             "validation": {
               "rootPath": "/content"
             },
@@ -523,9 +507,9 @@
                 {
                   "===": [
                     {
-                      "var": "PrimarybackgroundType"
+                      "var": "backgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
@@ -550,15 +534,14 @@
             "multi": false,
             "name": "ctaAsset",
             "label": "Asset (PDF/Image)",
-            "description": "Upload the Asset (PDF/Image)",
             "condition": {
               "and": [
                 {
                   "===": [
                     {
-                      "var": "PrimarybackgroundType"
+                      "var": "backgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
@@ -579,18 +562,17 @@
           },
           {
             "component": "text",
-            "name": "width-media-aria-label",
+            "name": "ctaAriaLabel",
             "label": "ARIA Label",
             "valueType": "string",
-            "description": "Enter ARIA label to comply ADA",
             "condition": {
               "and": [
                 {
                   "===": [
                     {
-                      "var": "PrimarybackgroundType"
+                      "var": "backgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 }
               ]
@@ -600,7 +582,6 @@
             "component": "select",
             "name": "targetPath",
             "label": "Target Path",
-            "description": "Select the target path for the authored CTA URL",
             "value": "sameTab",
             "options": [
               {
@@ -617,9 +598,9 @@
                 {
                   "===": [
                     {
-                      "var": "PrimarybackgroundType"
+                      "var": "backgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
@@ -733,7 +714,6 @@
             "component": "select",
             "name": "secCtaStyle",
             "label": "CTA Style",
-            "description": "Select the style of the Button CTA",
             "value": "primary",
             "options": [
               {
@@ -881,18 +861,17 @@
           },
           {
             "component": "text",
-            "name": "sec-width-media-aria-label",
+            "name": "secCtaAriaLabel",
             "label": "ARIA Label",
             "valueType": "string",
-            "description": "Enter ARIA label to comply ADA",
             "condition": {
               "and": [
                 {
                   "===": [
                     {
-                      "var": "PrimarybackgroundType"
+                      "var": "backgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 }
               ]
@@ -902,7 +881,6 @@
             "component": "select",
             "name": "secTargetPath",
             "label": "Target Path",
-            "description": "Select the target path for the authored CTA URL",
             "value": "sameTab",
             "options": [
               {
@@ -919,9 +897,9 @@
                 {
                   "===": [
                     {
-                      "var": "PrimarybackgroundType"
+                      "var": "backgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
@@ -981,9 +959,9 @@
                 {
                   "===": [
                     {
-                      "var": "PrimarybackgroundType"
+                      "var": "backgroundType"
                     },
-                    "imageSlide"
+                    "image"
                   ]
                 },
                 {
