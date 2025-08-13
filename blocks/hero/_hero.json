@@ -88,7 +88,7 @@
           "condition": {
             "===": [
               {
-                "var": "PrimarybackgroundType"
+                "var": "backgroundType"
               },
               "image"
             ]
@@ -476,7 +476,7 @@
                   {
                     "===": [
                       {
-                        "var": "PrimarybackgroundType"
+                        "var": "backgroundType"
                       },
                       "image"
                     ]
@@ -510,7 +510,7 @@
               {
                 "===": [
                   {
-                    "var": "PrimarybackgroundType"
+                    "var": "backgroundType"
                   },
                   "image"
                 ]
@@ -546,7 +546,7 @@
                   {
                     "===": [
                       {
-                        "var": "PrimarybackgroundType"
+                        "var": "backgroundType"
                       },
                       "image"
                     ]
@@ -568,7 +568,7 @@
               "condition": {
                 "===": [
                   {
-                    "var": "PrimarybackgroundType"
+                    "var": "backgroundType"
                   },
                   "image"
                 ]
@@ -594,7 +594,7 @@
                   {
                     "===": [
                       {
-                        "var": "PrimarybackgroundType"
+                        "var": "backgroundType"
                       },
                       "image"
                     ]
@@ -621,7 +621,7 @@
                   {
                     "===": [
                       {
-                        "var": "PrimarybackgroundType"
+                        "var": "backgroundType"
                       },
                       "image"
                     ]
@@ -654,7 +654,7 @@
                   {
                     "===": [
                       {
-                        "var": "PrimarybackgroundType"
+                        "var": "backgroundType"
                       },
                       "image"
                     ]
