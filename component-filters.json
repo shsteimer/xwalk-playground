@@ -38,5 +38,12 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "hero",
+    "components": [
+      "hero-cta",
+      "hero-asset-cta"
+    ]
   }
 ]

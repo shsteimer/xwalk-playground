@@ -10,9 +10,40 @@
             "template": {
               "name": "Hero",
               "model": "hero",
+              "filter": "hero",
               "content_title": "",
               "content_titleType": "h1",
               "classes_type": "image"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Hero CTA",
+      "id": "hero-cta",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Hero CTA",
+              "model": "hero-cta"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Hero Asset CTA",
+      "id": "hero-asset-cta",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Hero Asset CTA",
+              "model": "hero-asset-cta"
             }
           }
         }
@@ -229,368 +260,102 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "hero-cta",
+      "fields": [
         {
-          "component": "container",
-          "collapsible": true,
-          "name": "oneButton",
-          "label": "First Button CTA Fields",
-          "valueType": "string",
-          "condition": {
-            "===": [
-              {
-                "var": "classes_type"
-              },
-              "image"
-            ]
-          },
-          "fields": [
+          "component": "select",
+          "name": "ctas_ctaType",
+          "label": "CTA Style",
+          "value": "primary",
+          "options": [
             {
-              "component": "select",
-              "name": "ctas_ctaType",
-              "label": "CTA Style",
-              "value": "primary",
-              "options": [
-                {
-                  "name": "Primary",
-                  "value": "primary"
-                },
-                {
-                  "name": "Secondary",
-                  "value": "secondary"
-                }
-              ],
-              "condition": {
-                "===": [
-                  {
-                    "var": "classes_type"
-                  },
-                  "image"
-                ]
-              }
+              "name": "Primary",
+              "value": "primary"
             },
             {
-              "component": "text",
-              "name": "ctas_ctaText",
-              "label": "First CTA Label",
-              "valueType": "string",
-              "condition": {
-                "===": [
-                  {
-                    "var": "classes_type"
-                  },
-                  "image"
-                ]
-              }
-            },
-            {
-              "component": "select",
-              "name": "ctas_ctaAction",
-              "label": "CTA Selection",
-              "options": [
-                {
-                  "name": "Link",
-                  "value": "link"
-                },
-                {
-                  "name": "Asset (PDF/Image)",
-                  "value": "asset"
-                }
-              ],
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "oneButton|ctas_ctaText"
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "component": "aem-content",
-              "name": "ctas_cta",
-              "label": "CTA Link",
-              "valueType": "string",
-              "validation": {
-                "rootPath": "/content"
-              },
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "oneButton|ctas_ctaText"
-                    }
-                  },
-                  {
-                    "===": [
-                      {
-                        "var": "oneButton|ctas_ctaAction"
-                      },
-                      "link"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "component": "reference",
-              "valueType": "string",
-              "multi": false,
-              "name": "ctas_ctaAsset",
-              "label": "Asset (PDF/Image)",
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "oneButton|ctas_ctaText"
-                    }
-                  },
-                  {
-                    "===": [
-                      {
-                        "var": "oneButton|ctas_ctaAction"
-                      },
-                      "asset"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "component": "text",
-              "name": "ctas_ctaTitle",
-              "label": "ARIA Label",
-              "valueType": "string",
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  }
-                ]
-              }
+              "name": "Secondary",
+              "value": "secondary"
             }
           ]
         },
         {
-          "component": "container",
-          "collapsible": true,
-          "name": "twoButton",
-          "label": "Second Button CTA Fields",
+          "component": "text",
+          "name": "ctas_ctaText",
+          "label": "First CTA Label",
+          "valueType": "string"
+        },
+        {
+          "component": "aem-content",
+          "name": "ctas_cta",
+          "label": "CTA Link",
           "valueType": "string",
-          "condition": {
-            "and": [
-              {
-                "===": [
-                  {
-                    "var": "classes_type"
-                  },
-                  "image"
-                ]
-              }
-            ]
-          },
-          "fields": [
+          "validation": {
+            "rootPath": "/content"
+          }
+        },
+        {
+          "component": "text",
+          "name": "ctas_ctaTitle",
+          "label": "ARIA Label",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "hero-asset-cta",
+      "fields": [
+        {
+          "component": "select",
+          "name": "ctas_ctaType",
+          "label": "CTA Style",
+          "value": "primary",
+          "options": [
             {
-              "component": "select",
-              "name": "ctas_secCtaType",
-              "label": "CTA Style",
-              "value": "primary",
-              "options": [
-                {
-                  "name": "Primary",
-                  "value": "primary"
-                },
-                {
-                  "name": "Secondary",
-                  "value": "secondary"
-                }
-              ],
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "twoButton|ctas_secCtaText"
-                    }
-                  }
-                ]
-              }
+              "name": "Primary",
+              "value": "primary"
             },
             {
-              "component": "text",
-              "name": "ctas_secCtaText",
-              "label": "Second CTA Label",
-              "valueType": "string",
-              "description": "Enter label to display on the CTA for each card",
-              "condition": {
-                "===": [
-                  {
-                    "var": "classes_type"
-                  },
-                  "image"
-                ]
-              }
-            },
-            {
-              "component": "select",
-              "name": "ctas_secCtaAction",
-              "label": "CTA Selection",
-              "description": "Select the CTA Selection",
-              "options": [
-                {
-                  "name": "Link",
-                  "value": "link"
-                },
-                {
-                  "name": "Asset (PDF/Image)",
-                  "value": "asset"
-                }
-              ],
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "twoButton|ctas_secCtaText"
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "component": "aem-content",
-              "name": "ctas_secCta",
-              "label": "CTA Link",
-              "valueType": "string",
-              "description": "Enter the URL to navigate when CTA is clicked for each card",
-              "validation": {
-                "rootPath": "/content"
-              },
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "twoButton|ctas_secCtaText"
-                    }
-                  },
-                  {
-                    "===": [
-                      {
-                        "var": "twoButton|ctas_secCtaAction"
-                      },
-                      "link"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "component": "reference",
-              "valueType": "string",
-              "multi": false,
-              "name": "ctas_secCtaAsset",
-              "label": "Asset (PDF/Image)",
-              "description": "Upload the Asset (PDF/Image)",
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "twoButton|ctas_secCtaText"
-                    }
-                  },
-                  {
-                    "===": [
-                      {
-                        "var": "twoButton|ctas_secCtaAction"
-                      },
-                      "asset"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "component": "text",
-              "name": "ctas_secCtaTitle",
-              "label": "ARIA Label",
-              "valueType": "string",
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "classes_type"
-                      },
-                      "image"
-                    ]
-                  }
-                ]
-              }
+              "name": "Secondary",
+              "value": "secondary"
             }
           ]
+        },
+        {
+          "component": "text",
+          "name": "ctas_ctaText",
+          "label": "First CTA Label",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "multi": false,
+          "name": "ctas_cta",
+          "label": "Asset (PDF/Image)",
+          "validation": {
+            "rootPath": "/content"
+          }
+        },
+        {
+          "component": "text",
+          "name": "ctas_ctaTitle",
+          "label": "ARIA Label",
+          "valueType": "string"
         }
       ]
     }
   ],
-  "filters": []
+  "filters": [
+    {
+      "id": "hero",
+      "components": [
+        "hero-cta",
+        "hero-asset-cta"
+      ]
+    }
+  ]
 }
