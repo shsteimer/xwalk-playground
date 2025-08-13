@@ -107,26 +107,13 @@
           "description": "Offset content on the left in the hero section"
         },
         {
-          "component": "custom-asset-namespace:custom-asset",
-          "configUrl": "https://main--xwalk-playground--shsteimer.aem.live/tools/asset-picker/image.config.json",
+          "component": "reference",
           "valueType": "string",
           "name": "BackgroundImage",
           "label": "Background Image",
+          "multi": false,
           "description": "Upload Image for the Primary Hero",
           "required": true,
-          "condition": {
-            "===": [
-              {
-                "var": "PrimarybackgroundType"
-              },
-              "imageSlide"
-            ]
-          }
-        },
-        {
-          "component": "custom-asset-namespace:custom-asset-mimetype",
-          "valueType": "string",
-          "name": "BackgroundImageMimeType",
           "condition": {
             "===": [
               {
@@ -152,9 +139,9 @@
           }
         },
         {
-          "component": "custom-asset-namespace:custom-asset",
-          "configUrl": "https://main--xwalk-playground--shsteimer.aem.live/tools/asset-picker/image.config.json",
+          "component": "reference",
           "valueType": "string",
+          "multi": false,
           "name": "videoPath",
           "label": "Video Path",
           "description": "Upload the full-length video",
@@ -169,38 +156,12 @@
           }
         },
         {
-          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "component": "reference",
           "valueType": "string",
-          "name": "videoPathMimeType",
-          "condition": {
-            "===": [
-              {
-                "var": "PrimarybackgroundType"
-              },
-              "videoSlide"
-            ]
-          }
-        },
-        {
-          "component": "custom-asset-namespace:custom-asset",
-          "configUrl": "https://main--xwalk-playground--shsteimer.aem.live/tools/asset-picker/image.config.json",
-          "valueType": "string",
+          "multi": false,
           "name": "icon",
           "label": "Icon",
           "description": "Upload the icon image",
-          "condition": {
-            "===": [
-              {
-                "var": "PrimarybackgroundType"
-              },
-              "imageSlide"
-            ]
-          }
-        },
-        {
-          "component": "custom-asset-namespace:custom-asset-mimetype",
-          "valueType": "string",
-          "name": "iconMimeType",
           "condition": {
             "===": [
               {
@@ -412,42 +373,12 @@
               }
             },
             {
-              "component": "custom-asset-namespace:custom-asset",
-              "configUrl": "https://main--xwalk-playground--shsteimer.aem.live/tools/asset-picker/image.config.json",
+              "component": "reference",
+              "valueType": "string",
+              "multi": false,
               "name": "ctaAsset",
               "label": "Asset (PDF/Image)",
               "description": "Upload the Asset (PDF/Image)",
-              "valueType": "string",
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "PrimarybackgroundType"
-                      },
-                      "imageSlide"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "oneButton|ctaLabel"
-                    }
-                  },
-                  {
-                    "===": [
-                      {
-                        "var": "oneButton|ctaType"
-                      },
-                      "asset"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "component": "custom-asset-namespace:custom-asset-mimetype",
-              "valueType": "string",
-              "name": "ctaAssetMimeType",
               "condition": {
                 "and": [
                   {
@@ -744,42 +675,12 @@
               }
             },
             {
-              "component": "custom-asset-namespace:custom-asset",
-              "configUrl": "https://main--xwalk-playground--shsteimer.aem.live/tools/asset-picker/image.config.json",
+              "component": "reference",
+              "valueType": "string",
+              "multi": false,
               "name": "secCtaAsset",
               "label": "Asset (PDF/Image)",
               "description": "Upload the Asset (PDF/Image)",
-              "valueType": "string",
-              "condition": {
-                "and": [
-                  {
-                    "===": [
-                      {
-                        "var": "PrimarybackgroundType"
-                      },
-                      "imageSlide"
-                    ]
-                  },
-                  {
-                    "!!": {
-                      "var": "twoButton|secCtaLabel"
-                    }
-                  },
-                  {
-                    "===": [
-                      {
-                        "var": "twoButton|secCtaType"
-                      },
-                      "asset"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "component": "custom-asset-namespace:custom-asset-mimetype",
-              "valueType": "string",
-              "name": "secCtaAssetMimeType",
               "condition": {
                 "and": [
                   {
