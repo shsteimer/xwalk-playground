@@ -341,7 +341,7 @@
                   {
                     "===": [
                       {
-                        "var": "ctas_ctaAction"
+                        "var": "oneButton|ctas_ctaAction"
                       },
                       "link"
                     ]
@@ -373,7 +373,7 @@
                   {
                     "===": [
                       {
-                        "var": "ctas_ctaAction"
+                        "var": "oneButton|ctas_ctaAction"
                       },
                       "asset"
                     ]
@@ -528,7 +528,7 @@
                   {
                     "===": [
                       {
-                        "var": "ctas_secCtaAction"
+                        "var": "twoButton|ctas_secCtaAction"
                       },
                       "link"
                     ]
@@ -561,7 +561,7 @@
                   {
                     "===": [
                       {
-                        "var": "ctas_secCtaAction"
+                        "var": "twoButton|ctas_secCtaAction"
                       },
                       "asset"
                     ]
