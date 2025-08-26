@@ -157,7 +157,14 @@ function renderBlock(config) {
   } else {
     const { video } = config;
     if (video) {
-      background.appendChild(video);
+      const videoEl = document.createElement('video');
+      videoEl.src = video;
+      videoEl.autoplay = true;
+      videoEl.loop = true;
+      videoEl.muted = true;
+      videoEl.playsInline = true;
+      videoEl.controls = false;
+      background.appendChild(videoEl);
     }
   }
 
